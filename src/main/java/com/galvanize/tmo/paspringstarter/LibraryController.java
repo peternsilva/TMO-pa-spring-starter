@@ -3,10 +3,7 @@ package com.galvanize.tmo.paspringstarter;
 import org.apache.catalina.connector.Response;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -29,7 +26,7 @@ public class LibraryController {
     }
 
     @GetMapping("/books")
-    public Map<String, ArrayList> getBooks() {
+    public Map<String, ArrayList> getAllBooks() {
         Book b = new Book("author", "title", 1979);
         ArrayList<Book> books = new ArrayList();
         books.add(b);
@@ -39,5 +36,10 @@ public class LibraryController {
         HashMap<String, ArrayList> map = new HashMap();
         map.put("books", books);
         return map;
+    }
+
+    @DeleteMapping("/books")
+    public ResponseEntity<String> deleteAllBooks(){
+        return ResponseEntity.status(204).body("[]");
     }
 }
