@@ -6,10 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 @RestController
 public class LibraryController {
@@ -27,11 +24,15 @@ public class LibraryController {
 
     @GetMapping("/books")
     public Map<String, ArrayList> getAllBooks() {
-        Book b = new Book("author", "title", 1979);
         ArrayList<Book> books = new ArrayList();
+
+        Book a = new Book(1, "Douglas Adams", "The Hitchhiker's Guide to the Galaxy", 1979);
+        Book b = new Book(2, "Philip K. Dick", "Do Androids Dream of Electric Sheep?", 1968);
+        Book c = new Book(3, "William Gibson", "Neuromancer", 1984);
+
         books.add(b);
-        books.add(b);
-        books.add(b);
+        books.add(c);
+        books.add(a);
 
         HashMap<String, ArrayList> map = new HashMap();
         map.put("books", books);
