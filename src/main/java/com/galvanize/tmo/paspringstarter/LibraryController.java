@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 @RestController
 public class LibraryController {
-
-//    private BooksRepository booksRepository;
 
     @GetMapping("/health")
     public ResponseEntity<String> health() {
@@ -29,12 +29,15 @@ public class LibraryController {
     }
 
     @GetMapping("/books")
-    public ArrayList<Book> getBooks() {
+    public Map<String, ArrayList> getBooks() {
         Book b = new Book("author", "title", 1979);
         ArrayList<Book> books = new ArrayList();
         books.add(b);
         books.add(b);
         books.add(b);
-        return books;
+
+        HashMap<String, ArrayList> map = new HashMap();
+        map.put("books", books);
+        return map;
     }
 }
