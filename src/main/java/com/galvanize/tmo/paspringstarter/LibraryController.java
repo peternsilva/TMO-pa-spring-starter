@@ -11,18 +11,18 @@ import java.util.*;
 @RestController
 public class LibraryController {
 
-    @PostMapping("/books")
+    @PostMapping("/api/books")
     public ResponseEntity<Book> postBook(@RequestBody Book book){
         book.setId(9);
         return ResponseEntity.status(201).body(book);
     }
 
-    @DeleteMapping("/books")
+    @DeleteMapping("/api/books")
     public ResponseEntity<String> deleteAllBooks(){
         return ResponseEntity.status(204).body("[]");
     }
 
-    @GetMapping("/books")
+    @GetMapping("/api/books")
     public Map<String, ArrayList> getAllBooks() {
         ArrayList<Book> books = new ArrayList();
 
