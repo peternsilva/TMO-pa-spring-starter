@@ -28,7 +28,7 @@ public class LibraryController {
 
         Book a = new Book(1, "Douglas Adams", "The Hitchhiker's Guide to the Galaxy", 1979);
         Book b = new Book(2, "Philip K. Dick", "Do Androids Dream of Electric Sheep?", 1968);
-        Book c = new Book(3, "William Gibson", "Neuromancer", 19841);
+        Book c = new Book(3, "William Gibson", "Neuromancer", 1984);
 
         books.add(b);
         books.add(c);
