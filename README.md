@@ -1,5 +1,7 @@
 # Pre-Assessment Spring Starter
 
+Currently redeploys with every push to [https://galv-pa-be1.herokuapp.com/](https://galv-pa-be1.herokuapp.com/)
+
 ## Usage
 This starter utilizes Gradle as its build tool. After cloning and changing into its directory, open the the project in your IDE of choice. IntelliJ Idea Community Edition is recommended, however you may wish to use Visual Code Studio if it is set up for Java development with the correct extensions.
 
